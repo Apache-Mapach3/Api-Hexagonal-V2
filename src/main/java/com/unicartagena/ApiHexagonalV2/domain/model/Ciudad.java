@@ -1,4 +1,4 @@
-package com.unicartagena.ApiHexagonalV2.domain.model;
+package com.unicartagena.ApiHexagonalV2V2.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
