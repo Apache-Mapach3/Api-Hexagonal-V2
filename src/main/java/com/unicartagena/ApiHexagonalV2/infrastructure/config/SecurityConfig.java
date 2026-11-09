@@ -2,6 +2,7 @@ package com.unicartagena.ApiHexagonalV2.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -21,40 +22,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // Desactivamos CSRF para APIs REST
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .csrf(csrf -> csrf.disable())
+                .headers(h -> h.frameOptions(f -> f.sameOrigin())) // para la consola H2
+                .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        // Permitimos acceso público a auth y a la documentación Swagger
-                        .requestMatchers("/api/v1/auth/**", "/swagger-ui/**", "/api-docs/**", "/h2-console/**").permitAll()
-                        // (Opcional) Aquí podrías exigir token para los CRUD de Países/Ciudades en el futuro
-                        .requestMatchers("/api/v1/paises/**", "/api/v1/ciudades/**", "/api/v1/reportes/**").permitAll()
+                        .requestMatchers("/api/v1/auth/**", "/h2-console/**",
+                                "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/paises/**",
+                                "/api/v1/ciudades/**", "/api/v1/reportes/**").permitAll()
                         .anyRequest().authenticated()
                 );
         return http.build();
-    }
-
-    @Configuration
-    @EnableWebSecurity
-    public class SecurityConfig {
-
-        @Bean
-        public PasswordEncoder passwordEncoder() {
-            return new BCryptPasswordEncoder();
-        }
-
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-            http
-                    .csrf(csrf -> csrf.disable())
-                    .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                    .authorizeHttpRequests(auth -> auth
-                            // Permitimos auth, H2 y Swagger (rutas corregidas)
-                            .requestMatchers("/api/v1/auth/**", "/h2-console/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                            // Permitimos lectura de países/ciudades para facilitar las pruebas del corte
-                            .requestMatchers(HttpMethod.GET, "/api/v1/paises/**", "/api/v1/ciudades/**", "/api/v1/reportes/**").permitAll()
-                            .anyRequest().authenticated()
-                    );
-            return http.build();
-        }
     }
 }

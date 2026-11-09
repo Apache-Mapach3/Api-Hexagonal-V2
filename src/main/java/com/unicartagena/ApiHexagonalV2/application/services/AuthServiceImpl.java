@@ -3,12 +3,15 @@ package com.unicartagena.ApiHexagonalV2.application.services;
 import com.unicartagena.ApiHexagonalV2.application.ports.AuthService;
 import com.unicartagena.ApiHexagonalV2.domain.model.Usuario;
 import com.unicartagena.ApiHexagonalV2.domain.ports.UsuarioRepository;
-import com.unicartagena.ApiHexagonalV2.infrastructure.utils.JwtUtil;
 import com.unicartagena.ApiHexagonalV2.infrastructure.utils.EmailService;
+import com.unicartagena.ApiHexagonalV2.infrastructure.utils.JwtUtil;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -19,6 +22,9 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final EmailService emailService;
+
+    @Value("${app.frontend.url}")
+    private String appFrontendUrl;
 
     @Override
     public Usuario registrar(Usuario usuario) {
@@ -42,16 +48,19 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void solicitarRecuperacionPassword(String email) {
-        Usuario usuario = usuarioRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Email no registrado"));
+        // No lanzamos error si el email no existe (evita enumeración de usuarios)
+        Optional<Usuario> usuarioOpt = usuarioRepository.findByEmail(email);
 
-        String token = UUID.randomUUID().toString();
-        usuario.setTokenRecuperacion(token);
-        usuario.setFechaExpiracionToken(LocalDateTime.now().plusHours(1)); // Válido por 1 hora
-        usuarioRepository.save(usuario);
+        if (usuarioOpt.isPresent()) {
+            Usuario usuario = usuarioOpt.get();
+            String token = UUID.randomUUID().toString();
+            usuario.setTokenRecuperacion(token);
+            usuario.setFechaExpiracionToken(LocalDateTime.now().plusHours(1));
+            usuarioRepository.save(usuario);
 
-        String link = "http://tu-frontend-o-postman.com/reset-password?token=" + token;
-        emailService.enviarCorreoRecuperacion(usuario.getEmail(), link);
+            String link = appFrontendUrl + "/reset-password?token=" + token;
+            emailService.enviarCorreoRecuperacion(usuario.getEmail(), link);
+        }
     }
 
     @Override
@@ -67,23 +76,5 @@ public class AuthServiceImpl implements AuthService {
         usuario.setTokenRecuperacion(null);
         usuario.setFechaExpiracionToken(null);
         usuarioRepository.save(usuario);
-    }
-    @Override
-    public void solicitarRecuperacionPassword(String email) {
-        // Buscamos el usuario, pero no lanzamos error si no existe (por seguridad)
-        Optional<Usuario> usuarioOpt = usuarioRepository.findByEmail(email);
-
-        if (usuarioOpt.isPresent()) {
-            Usuario usuario = usuarioOpt.get();
-            String token = UUID.randomUUID().toString();
-            usuario.setTokenRecuperacion(token);
-            usuario.setFechaExpiracionToken(LocalDateTime.now().plusHours(1));
-            usuarioRepository.save(usuario);
-
-            // Usamos la propiedad del frontend (o un placeholder si no está configurada)
-            String link = appFrontendUrl + "/reset-password?token=" + token;
-            emailService.enviarCorreoRecuperacion(usuario.getEmail(), link);
-        }
-        // Si no existe, no hacemos nada. El usuario verá el mismo mensaje de éxito.
     }
 }
