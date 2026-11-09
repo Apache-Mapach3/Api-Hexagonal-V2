@@ -1,7 +1,7 @@
-package com.unicartagena.apihexagonal.infrastructure.adapters.in.web;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.in.web;
 
-import com.unicartagena.apihexagonal.application.ports.PaisService;
-import com.unicartagena.apihexagonal.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.application.ports.PaisService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;

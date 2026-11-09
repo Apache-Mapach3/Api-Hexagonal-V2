@@ -1,6 +1,6 @@
-package com.unicartagena.apihexagonal.application.ports;
+package com.unicartagena.ApiHexagonalV2.application.ports;
 
-import com.unicartagena.apihexagonal.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
 import java.util.List;
 import java.util.Optional;
 

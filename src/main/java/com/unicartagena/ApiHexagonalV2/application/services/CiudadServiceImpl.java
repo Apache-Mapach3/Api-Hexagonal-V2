@@ -1,8 +1,8 @@
-package com.unicartagena.apihexagonal.application.services;
+package com.unicartagena.ApiHexagonalV2.application.services;
 
-import com.unicartagena.apihexagonal.application.ports.CiudadService;
-import com.unicartagena.apihexagonal.domain.model.Ciudad;
-import com.unicartagena.apihexagonal.domain.ports.CiudadRepository;
+import com.unicartagena.ApiHexagonalV2.application.ports.CiudadService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Ciudad;
+import com.unicartagena.ApiHexagonalV2.domain.ports.CiudadRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

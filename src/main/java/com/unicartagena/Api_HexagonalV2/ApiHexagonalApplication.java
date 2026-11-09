@@ -1,4 +1,4 @@
-package com.unicartagena.apihexagonal;
+package com.unicartagena.Api_HexagonalV2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

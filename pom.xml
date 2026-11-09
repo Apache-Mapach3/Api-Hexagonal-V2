@@ -15,7 +15,7 @@
 	<artifactId>api-hexagonal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>api-hexagonal</name>
-	<description>Backend con Arquitectura Hexagonal - Corte 2</description>
+	<description>Backend con Arquitectura Hexagonal - Corte 3</description>
 
 	<properties>
 		<java.version>17</java.version> <!-- O 21, si tu IntelliJ usa Java 21 -->

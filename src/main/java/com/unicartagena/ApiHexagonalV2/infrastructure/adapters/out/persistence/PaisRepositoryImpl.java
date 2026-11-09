@@ -1,9 +1,9 @@
-package com.unicartagena.apihexagonal.infrastructure.adapters.out.persistence;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence;
 
-import com.unicartagena.apihexagonal.domain.model.Pais;
-import com.unicartagena.apihexagonal.domain.ports.PaisRepository;
-import com.unicartagena.apihexagonal.infrastructure.adapters.out.persistence.entity.PaisEntity;
-import com.unicartagena.apihexagonal.infrastructure.adapters.out.persistence.repository.JpaPaisRepository;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.domain.ports.PaisRepository;
+import com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.entity.PaisEntity;
+import com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.repository.JpaPaisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

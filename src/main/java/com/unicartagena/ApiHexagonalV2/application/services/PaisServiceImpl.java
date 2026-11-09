@@ -1,8 +1,8 @@
-package com.unicartagena.apihexagonal.application.services;
+package com.unicartagena.ApiHexagonalV2.application.services;
 
-import com.unicartagena.apihexagonal.application.ports.PaisService;
-import com.unicartagena.apihexagonal.domain.model.Pais;
-import com.unicartagena.apihexagonal.domain.ports.PaisRepository;
+import com.unicartagena.ApiHexagonalV2.application.ports.PaisService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.domain.ports.PaisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
