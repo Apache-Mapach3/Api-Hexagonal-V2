@@ -1,6 +1,6 @@
-package com.unicartagena.ApiHexagonalV2V2.domain.ports;
+package com.unicartagena.ApiHexagonalV2.domain.ports;
 
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Usuario;
+import com.unicartagena.ApiHexagonalV2.domain.model.Usuario;
 import java.util.Optional;
 
 public interface UsuarioRepository {

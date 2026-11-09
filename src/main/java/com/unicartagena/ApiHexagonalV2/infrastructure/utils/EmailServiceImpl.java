@@ -1,4 +1,4 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.utils;
+package com.unicartagena.ApiHexagonalV2.infrastructure.utils;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;

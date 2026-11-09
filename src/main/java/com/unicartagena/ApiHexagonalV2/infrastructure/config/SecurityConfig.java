@@ -1,4 +1,4 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.config;
+package com.unicartagena.ApiHexagonalV2.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

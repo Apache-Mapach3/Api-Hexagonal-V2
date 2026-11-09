@@ -1,9 +1,9 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.in.web;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.in.web;
 
-import com.unicartagena.ApiHexagonalV2V2.application.ports.CiudadService;
-import com.unicartagena.ApiHexagonalV2V2.application.ports.PaisService;
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Ciudad;
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.application.ports.CiudadService;
+import com.unicartagena.ApiHexagonalV2.application.ports.PaisService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Ciudad;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

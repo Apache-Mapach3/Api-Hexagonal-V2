@@ -1,8 +1,8 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.out.persistence.repository;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.repository;
 
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Ciudad;
-import com.unicartagena.ApiHexagonalV2V2.domain.ports.CiudadRepository;
-import com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.out.persistence.entity.CiudadEntity;
+import com.unicartagena.ApiHexagonalV2.domain.model.Ciudad;
+import com.unicartagena.ApiHexagonalV2.domain.ports.CiudadRepository;
+import com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.entity.CiudadEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;

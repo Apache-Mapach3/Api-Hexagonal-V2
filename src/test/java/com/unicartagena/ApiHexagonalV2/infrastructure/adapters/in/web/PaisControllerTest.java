@@ -1,7 +1,7 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.in.web;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.in.web;
 
-import com.unicartagena.ApiHexagonalV2V2.application.ports.PaisService;
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Pais;
+import com.unicartagena.ApiHexagonalV2.application.ports.PaisService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Pais;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

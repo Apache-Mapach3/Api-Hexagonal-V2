@@ -1,7 +1,7 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.in.web;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.in.web;
 
-import com.unicartagena.ApiHexagonalV2V2.application.ports.AuthService;
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Usuario;
+import com.unicartagena.ApiHexagonalV2.application.ports.AuthService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Usuario;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

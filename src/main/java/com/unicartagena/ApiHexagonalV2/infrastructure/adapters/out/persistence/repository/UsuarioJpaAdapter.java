@@ -1,8 +1,8 @@
-package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.out.persistence.repository;
+package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.repository;
 
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Usuario;
-import com.unicartagena.ApiHexagonalV2V2.domain.ports.UsuarioRepository;
-import com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.out.persistence.entity.UsuarioEntity;
+import com.unicartagena.ApiHexagonalV2.domain.model.Usuario;
+import com.unicartagena.ApiHexagonalV2.domain.ports.UsuarioRepository;
+import com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.entity.UsuarioEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import java.util.Optional;

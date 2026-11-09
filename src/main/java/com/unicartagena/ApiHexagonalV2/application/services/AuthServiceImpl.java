@@ -1,10 +1,10 @@
-package com.unicartagena.ApiHexagonalV2V2.application.services;
+package com.unicartagena.ApiHexagonalV2.application.services;
 
-import com.unicartagena.ApiHexagonalV2V2.application.ports.AuthService;
-import com.unicartagena.ApiHexagonalV2V2.domain.model.Usuario;
-import com.unicartagena.ApiHexagonalV2V2.domain.ports.UsuarioRepository;
-import com.unicartagena.ApiHexagonalV2V2.infrastructure.utils.JwtUtil;
-import com.unicartagena.ApiHexagonalV2V2.infrastructure.utils.EmailService;
+import com.unicartagena.ApiHexagonalV2.application.ports.AuthService;
+import com.unicartagena.ApiHexagonalV2.domain.model.Usuario;
+import com.unicartagena.ApiHexagonalV2.domain.ports.UsuarioRepository;
+import com.unicartagena.ApiHexagonalV2.infrastructure.utils.JwtUtil;
+import com.unicartagena.ApiHexagonalV2.infrastructure.utils.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
