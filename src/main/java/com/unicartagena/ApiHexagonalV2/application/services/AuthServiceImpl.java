@@ -68,4 +68,22 @@ public class AuthServiceImpl implements AuthService {
         usuario.setFechaExpiracionToken(null);
         usuarioRepository.save(usuario);
     }
+    @Override
+    public void solicitarRecuperacionPassword(String email) {
+        // Buscamos el usuario, pero no lanzamos error si no existe (por seguridad)
+        Optional<Usuario> usuarioOpt = usuarioRepository.findByEmail(email);
+
+        if (usuarioOpt.isPresent()) {
+            Usuario usuario = usuarioOpt.get();
+            String token = UUID.randomUUID().toString();
+            usuario.setTokenRecuperacion(token);
+            usuario.setFechaExpiracionToken(LocalDateTime.now().plusHours(1));
+            usuarioRepository.save(usuario);
+
+            // Usamos la propiedad del frontend (o un placeholder si no está configurada)
+            String link = appFrontendUrl + "/reset-password?token=" + token;
+            emailService.enviarCorreoRecuperacion(usuario.getEmail(), link);
+        }
+        // Si no existe, no hacemos nada. El usuario verá el mismo mensaje de éxito.
+    }
 }

@@ -4,15 +4,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-// AQUÍ ESTÁ LA CLAVE: le decimos explícitamente cuál es la clase de configuración
-@SpringBootTest(classes = ApiHexagonalApplication.class)
+@SpringBootTest
 @ActiveProfiles("test")
 class ApiHexagonalApplicationTests {
 
     @Test
     void contextLoads() {
-        assertTrue(true, "El contexto de Spring cargó correctamente");
+        // Si este método se ejecuta sin lanzar excepciones,
+        // significa que el contexto de Spring cargó correctamente.
     }
 }
