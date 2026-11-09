@@ -1,4 +1,4 @@
-package com.unicartagena.ApiHexagonalV2.infrastructure.adapters.out.persistence.entity;
+package com.unicartagena.ApiHexagonalV2V2.infrastructure.adapters.out.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
