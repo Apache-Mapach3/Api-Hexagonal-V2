@@ -12,9 +12,9 @@
 	</parent>
 
 	<groupId>com.unicartagena</groupId>
-	<artifactId>api-hexagonal</artifactId>
+	<artifactId>Api-HexagonalV2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-hexagonal</name>
+	<name>Api-HexagonalV2</name>
 	<description>Backend con Arquitectura Hexagonal - Corte 3</description>
 
 	<properties>

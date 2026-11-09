@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Adaptador de entrada - Controlador REST.
- * Expone los endpoints HTTP para consumir los casos de uso.
- */
 @RestController
 @RequestMapping("/api/v1/paises")
 @RequiredArgsConstructor
@@ -50,6 +46,7 @@ public class PaisController {
         paisService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
+
     @PutMapping("/{id}")
     @Operation(summary = "Actualizar un país existente")
     public ResponseEntity<Pais> actualizar(@PathVariable Long id, @RequestBody Pais pais) {

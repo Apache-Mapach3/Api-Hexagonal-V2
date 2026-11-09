@@ -6,7 +6,8 @@ import org.springframework.test.context.ActiveProfiles;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+// AQUÍ ESTÁ LA CLAVE: le decimos explícitamente cuál es la clase de configuración
+@SpringBootTest(classes = ApiHexagonalApplication.class)
 @ActiveProfiles("test")
 class ApiHexagonalApplicationTests {
 
